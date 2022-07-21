@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700;800&family=Outfit:wght@400;700&family=Overpass:wght@700&family=Roboto+Slab:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="main.css" />
+      <link rel="stylesheet" href="modal.css" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div class="main">
+         <!-- Header Section -->
+         <header>
+            <div class="logo">pomodoro</div>
+         </header>
+         <!-- Mode Section -->
+         <section>
+            <div class="mode-parent">
+               <div class="mode">
+                  <p class="mode-pomodoro active">pomodoro</p>
+                  <p class="mode-short">short break</p>
+                  <p class="mode-long">long break</p>
+               </div>
+            </div>
+         </section>
+         <!-- Clock Section -->
+         <section>
+            <div class="clock">
+               <svg class="clock-background">
+                  <circle class="clock-circle" r="180" cy="210" cx="210" />
+               </svg>
+               <div class="clock-time"></div>
+               <div class="clock-start">START</div>
+               <div class="clock-pause">PAUSE</div>
+               <div class="clock-restart">RESTART</div>
+            </div>
+         </section>
+         <!-- Footer Section -->
+         <footer>
+            <div class="setting">
+               <div class="setting-gear">
+                  <img src="img/gear.png" alt="" />
+               </div>
+               <!-- <input class="time-value" type="number" />
+               <input class="set-value" type="button" /> -->
+
+               <!-- Modal Section -->
+               <div class="modal">
+                  <div class="modal-header">
+                     <div class="header-logo">Settings</div>
+                     <div class="header-escape">
+                        <img src="img/escape.png" alt="escape" />
+                     </div>
+                  </div>
+                  <div class="modal-time-type">
+                     <div>TIME (MINUTES)</div>
+                  </div>
+                  <div class="modal-timing">
+                     <div class="modal-pomodoro">
+                        <p class="pomodoro-logo">pomodoro</p>
+                        <input class="pomodoro-time" type="number" />
+                        <div class="pomodoro-button">
+                           <img class="time-up" src="img/up.png" alt="" />
+                           <img class="time-down" src="img/down.png" alt="" />
+                        </div>
+                     </div>
+                     <div class="modal-short">
+                        <p class="short-logo">short time</p>
+                        <input class="short-time" type="number" />
+                        <div class="short-button">
+                           <img class="time-up" src="img/up.png" alt="" />
+                           <img class="time-down" src="img/down.png" alt="" />
+                        </div>
+                     </div>
+                     <div class="modal-long">
+                        <p class="long-logo">long time</p>
+                        <input class="long-time" type="number" />
+                        <div class="long-button">
+                           <img class="time-up" src="img/up.png" alt="" />
+                           <img class="time-down" src="img/down.png" alt="" />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal-font">
+                     <div class="font-logo">FONT</div>
+                     <div class="font-list">
+                        <span class="font-kumbh-sans">Aa</span>
+                        <span class="font-roboto-slab">Aa</span>
+                        <span class="font-space-mono">Aa</span>
+                     </div>
+                  </div>
+                  <div class="modal-color">
+                     <div class="color-logo">COLOR</div>
+                     <div class="color-list">
+                        <div class="color-coral">
+                           <img
+                              class="color-imagen-first"
+                              src="img/applyColor.png"
+                              alt=""
+                           />
+                        </div>
+                        <div class="color-sky">
+                           <img
+                              class="color-imagen-second"
+                              src="img/applyColor.png"
+                              alt=""
+                           />
+                        </div>
+                        <div class="color-purple">
+                           <img
+                              class="color-imagen-third"
+                              src="img/applyColor.png"
+                              alt=""
+                           />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal-button">
+                     <button class="button-apply">Apply</button>
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <div class="overlay"></div>
+      <script defer src="clock.js"></script>
+      <script defer src="modal.js"></script>
+   </body>
+</html>

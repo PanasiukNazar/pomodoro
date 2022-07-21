@@ -1,0 +1,272 @@
+.modal {
+  display: none;
+  margin: 0 auto;
+  position: relative;
+  bottom: 710px;
+  z-index: 20;
+  height: auto;
+  max-width: 600px;
+  border-radius: 26px;
+  background-color: #ffffff;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e3e1e1;
+}
+.modal-header div {
+  padding-bottom: 32px;
+}
+
+.header-logo {
+  font-size: 28px;
+  line-height: 35px;
+  color: #161932;
+  font-weight: 700;
+  margin-left: 40px;
+  margin-top: 33px;
+}
+
+.header-escape {
+  cursor: pointer;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  margin-right: 38px;
+  margin-top: 47px;
+}
+
+.modal-time-type {
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: 5px;
+  color: #161932;
+  margin-top: 28px;
+  margin-left: 40px;
+  font-weight: 700;
+}
+
+.modal-timing {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  margin-right: 38px;
+  margin-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e3e1e1;
+}
+.modal-timing p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 15px;
+  color: #161932;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+.modal-timing input {
+  margin-top: 9px;
+  width: 140px;
+  height: auto;
+  border: none;
+  background-color: #eff1fa;
+  outline: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 16px;
+  border-radius: 10px;
+}
+.modal-timing input::-webkit-outer-spin-button,
+.modal-timing input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pomodoro-button {
+  position: relative;
+  left: 120px;
+  bottom: 38px;
+}
+.pomodoro-button img {
+  display: block;
+  cursor: pointer;
+}
+
+.short-button {
+  position: relative;
+  left: 120px;
+  bottom: 38px;
+}
+.short-button img {
+  display: block;
+  cursor: pointer;
+}
+
+.long-button {
+  position: relative;
+  left: 120px;
+  bottom: 38px;
+}
+.long-button img {
+  display: block;
+  cursor: pointer;
+}
+
+.time-down {
+  margin-top: 9px;
+}
+
+.modal-font {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 38px;
+  margin-top: 40px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #e3e1e1;
+}
+
+.font-logo {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 5px;
+  color: #161932;
+}
+
+.font-list span {
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.font-kumbh-sans {
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  line-height: 20px;
+  background-color: #161932;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.font-roboto-slab {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #1e213f;
+  mix-blend-mode: normal;
+  background-color: #eff1fa;
+  border-radius: 50%;
+  padding: 15px;
+  opacity: 0.73;
+}
+
+.font-space-mono {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  background-color: #eff1fa;
+  border-radius: 50%;
+  padding: 15px;
+  color: #1e213f;
+  mix-blend-mode: normal;
+  opacity: 0.73;
+}
+
+.modal-color {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 38px;
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+
+.color-logo {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 5px;
+  color: #161932;
+}
+
+.color-list div {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.color-coral {
+  background-color: #f87070;
+  border-radius: 50%;
+}
+
+.color-imagen-first {
+  padding: 15px;
+}
+
+.color-sky {
+  background-color: #70f3f8;
+  border-radius: 50%;
+}
+
+.color-imagen-second {
+  opacity: 0;
+  padding: 15px;
+}
+
+.color-purple {
+  background-color: #d881f8;
+  border-radius: 50%;
+}
+
+.color-imagen-third {
+  opacity: 0;
+  padding: 15px;
+}
+
+.modal-button {
+  position: relative;
+  top: 24px;
+  left: 230px;
+}
+
+.button-apply {
+  outline: none;
+  border: none;
+  background: #f87070;
+  border-radius: 26px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+  padding-left: 47px;
+  padding-right: 47px;
+  padding-bottom: 12px;
+  padding-top: 20px;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(10, 12, 28, 0.5);
+  width: 150vw;
+  height: 150vh;
+  z-index: 10;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}/*# sourceMappingURL=modal.css.map */

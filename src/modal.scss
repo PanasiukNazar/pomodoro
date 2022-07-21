@@ -1,0 +1,326 @@
+// Colors
+$background-basic: #ffffff;
+$background-minor: #eff1fa;
+$color-coral: #f87070;
+$color-black: #161932;
+$opacity-to-color: 0.5;
+$opacity-color: 0.73;
+$border-line: 1px solid#e3e1e1;
+
+// Backdowns
+$margin-tiny: 9px;
+$margin-medium: 33px;
+$margin-medium-big: 38px;
+$margin-big: 40px;
+$padding-small: 15px;
+$padding-medium: 20px;
+$position-small: 38px;
+$position-medium: 120px;
+$tiny-backdown: 16px;
+$small-backdown: 24px;
+$small-medium-backdown: 32px;
+$medium-backdown: 47px;
+$radius-little: 26px;
+$radius-circle: 50%;
+
+// Fonts
+$font-tiny: 13px;
+$font-small: 15px;
+$font-weight-bold: 700;
+$line-height-small: 15px;
+$line-height-medium: 20px;
+$letter-spacing-core: 5px;
+
+.modal {
+   display: none;
+   margin: 0 auto;
+   position: relative;
+   bottom: 710px;
+   z-index: 20;
+   height: auto;
+   max-width: 600px;
+   border-radius: $radius-little;
+   background-color: $background-basic;
+}
+
+// Header Section
+
+.modal-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: $border-line;
+
+   div {
+      padding-bottom: $small-medium-backdown;
+   }
+}
+
+.header-logo {
+   font-size: 28px;
+   line-height: 35px;
+   color: $color-black;
+   font-weight: $font-weight-bold;
+   margin-left: $margin-big;
+   margin-top: $margin-medium;
+}
+
+.header-escape {
+   cursor: pointer;
+   mix-blend-mode: normal;
+   opacity: $opacity-to-color;
+   margin-right: $margin-medium-big;
+   margin-top: $medium-backdown;
+}
+
+// Time-Type Section
+
+.modal-time-type {
+   font-size: $font-small;
+   line-height: $line-height-small;
+   letter-spacing: $letter-spacing-core;
+   color: $color-black;
+   margin-top: 28px;
+   margin-left: $margin-big;
+   font-weight: $font-weight-bold;
+}
+
+// Timig Section
+
+.modal-timing {
+   display: flex;
+   justify-content: space-between;
+   margin-left: $margin-big;
+   margin-right: $margin-medium-big;
+   margin-top: $small-backdown;
+   padding-bottom: $small-backdown;
+   border-bottom: $border-line;
+
+   p {
+      margin: 0;
+      font-weight: $font-weight-bold;
+      font-size: $font-small;
+      line-height: $line-height-small;
+      color: $color-black;
+      mix-blend-mode: normal;
+      opacity: $opacity-to-color;
+   }
+
+   input {
+      margin-top: $margin-tiny;
+      width: 140px;
+      height: auto;
+      border: none;
+      background-color: $background-minor;
+      outline: none;
+      padding-top: $padding-medium;
+      padding-bottom: $padding-medium;
+      padding-left: $tiny-backdown;
+      border-radius: 10px;
+   }
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+   }
+}
+
+.pomodoro-button {
+   position: relative;
+   left: $position-medium;
+   bottom: $position-small;
+
+   img {
+      display: block;
+      cursor: pointer;
+   }
+}
+
+.short-button {
+   position: relative;
+   left: $position-medium;
+   bottom: $position-small;
+
+   img {
+      display: block;
+      cursor: pointer;
+   }
+}
+
+.long-button {
+   position: relative;
+   left: $position-medium;
+   bottom: $position-small;
+   img {
+      display: block;
+      cursor: pointer;
+   }
+}
+
+.time-down {
+   margin-top: $margin-tiny;
+}
+
+// Font Section
+
+.modal-font {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-left: $margin-big;
+   margin-right: $margin-medium-big;
+   margin-top: $margin-big;
+   padding-bottom: 35px;
+   border-bottom: $border-line;
+}
+
+.font-logo {
+   font-weight: $font-weight-bold;
+   font-size: $font-tiny;
+   line-height: $line-height-small;
+   letter-spacing: $letter-spacing-core;
+   color: $color-black;
+}
+
+.font-list {
+   span {
+      cursor: pointer;
+      margin-left: $tiny-backdown;
+   }
+}
+
+.font-kumbh-sans {
+   font-weight: $font-weight-bold;
+   font-size: $font-small;
+   color: $background-basic;
+   line-height: $line-height-medium;
+   background-color: $color-black;
+   border-radius: $radius-circle;
+   padding: $padding-small;
+}
+
+.font-roboto-slab {
+   font-family: 'Roboto Slab';
+   font-style: normal;
+   font-weight: 400;
+   font-size: $font-small;
+   line-height: $line-height-medium;
+   color: #1e213f;
+   mix-blend-mode: normal;
+   background-color: $background-minor;
+   border-radius: $radius-circle;
+   padding: $padding-small;
+   opacity: $opacity-color;
+}
+
+.font-space-mono {
+   font-family: 'Space Mono';
+   font-style: normal;
+   font-weight: $font-weight-bold;
+   font-size: $font-small;
+   line-height: $line-height-medium;
+   background-color: $background-minor;
+   border-radius: $radius-circle;
+   padding: $padding-small;
+   color: #1e213f;
+   mix-blend-mode: normal;
+   opacity: $opacity-color;
+}
+
+// Color Section
+
+.modal-color {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-left: $margin-big;
+   margin-right: $margin-medium-big;
+   margin-top: $margin-big;
+   margin-bottom: $small-medium-backdown;
+}
+
+.color-logo {
+   font-weight: $font-weight-bold;
+   font-size: $font-tiny;
+   line-height: $line-height-small;
+   letter-spacing: $letter-spacing-core;
+   color: $color-black;
+}
+
+.color-list {
+   div {
+      cursor: pointer;
+      display: inline-block;
+      margin-left: 20px;
+   }
+}
+
+.color-coral {
+   background-color: $color-coral;
+   border-radius: $radius-circle;
+}
+
+.color-imagen-first {
+   padding: $padding-small;
+}
+
+.color-sky {
+   background-color: #70f3f8;
+   border-radius: $radius-circle;
+}
+
+.color-imagen-second {
+   opacity: 0;
+   padding: $padding-small;
+}
+
+.color-purple {
+   background-color: #d881f8;
+   border-radius: $radius-circle;
+}
+
+.color-imagen-third {
+   opacity: 0;
+   padding: $padding-small;
+}
+
+// Button Section
+
+.modal-button {
+   position: relative;
+   top: $small-backdown;
+   left: 230px;
+}
+
+.button-apply {
+   outline: none;
+   border: none;
+   background: $color-coral;
+   border-radius: $radius-little;
+   font-weight: $font-weight-bold;
+   font-size: $font-small;
+   line-height: $line-height-medium;
+   text-align: center;
+   color: $background-basic;
+   padding-left: $medium-backdown;
+   padding-right: $medium-backdown;
+   padding-bottom: 12px;
+   padding-top: $padding-medium;
+}
+
+.overlay {
+   position: absolute;
+   background: rgba(10, 12, 28, 0.5);
+   width: 150vw;
+   height: 150vh;
+   z-index: 10;
+   display: none;
+}
+
+.show {
+   display: block;
+}
+
+.hide {
+   display: none;
+}

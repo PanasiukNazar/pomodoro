@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  background-color: #1e213f;
+  overflow: hidden;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  font-family: "Kumbh Sans";
+  font-style: normal;
+}
+
+.logo {
+  margin-top: 52px;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 700;
+  color: #d7e0ff;
+}
+
+.mode-parent {
+  margin: 0 auto;
+  max-width: 400px;
+  margin-top: 52px;
+}
+
+.mode {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: #161932;
+  border-radius: 31.5px;
+}
+
+.mode p {
+  line-height: 17px;
+  font-size: 14px;
+  font-weight: 700;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 19px;
+  padding-bottom: 15px;
+  border-radius: 27px;
+}
+
+.mode-pomodoro {
+  margin-left: 7px;
+  color: #d7e0ff;
+  opacity: 0.4;
+}
+
+.mode-short {
+  margin-left: 7px;
+  color: #d7e0ff;
+  opacity: 0.4;
+}
+
+.mode-long {
+  color: #d7e0ff;
+  margin-left: 7px;
+  margin-right: 7px;
+  opacity: 0.4;
+}
+
+.active {
+  opacity: 1;
+  color: #1e213f;
+  background: #f87070;
+}
+
+.clock {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 454px;
+  height: 454px;
+  padding: 15px;
+  margin-top: 52px;
+  border-radius: 50%;
+  background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+  box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+}
+
+.clock-background {
+  width: 410px;
+  height: 410px;
+  border-radius: 50%;
+  border: 10px solid #161932;
+  background-color: #161932;
+}
+
+.clock-circle {
+  stroke-width: 15px;
+  stroke: #f87070;
+  fill: #161932;
+  transform-origin: center;
+  transform: rotate(-90deg);
+  transition: stroke-dashoffset 0.3s;
+}
+
+.clock-time {
+  position: absolute;
+  top: 410px;
+  font-size: 100px;
+  line-height: 124px;
+  letter-spacing: -5px;
+  font-weight: 700;
+  color: #d7e0ff;
+  margin-top: 52px;
+}
+
+.clock-start,
+.clock-pause,
+.clock-restart {
+  cursor: pointer;
+  position: absolute;
+  top: 585px;
+  margin-left: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 15px;
+  color: #d7e0ff;
+  font-weight: 700;
+}
+
+.clock-pause,
+.clock-restart {
+  display: none;
+}
+
+.setting-gear {
+  margin-top: 63px;
+  text-align: center;
+  mix-blend-mode: normal;
+  opacity: 0.4;
+}
+.setting-gear img {
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */

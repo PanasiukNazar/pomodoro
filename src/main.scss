@@ -1,0 +1,179 @@
+// Variables
+//Fonts
+$font-size-small: 14px;
+$line-height-small: 17px;
+$font-weight-bold: 700;
+
+//Colors
+$opacity-to-color: 0.4;
+$color-white-gray: #d7e0ff;
+$color-coral: #f87070;
+$external-bg-color: #1e213f;
+$internal-bg-color: #161932;
+
+//backdowns
+$margin-tiny: 7px;
+$margin-huge: 52px;
+$padding-small: 15px;
+$padding-small-medium: 19px;
+$padding-medium: 25px;
+$radius-oval: 27px;
+$radius-circle: 50%;
+$backdown-small-medium: 339px;
+$backdown-medium: 410px;
+$backdown-large: 454px;
+$backdown-maximal: 100%;
+
+// Styles for main Page
+body {
+   margin: 0;
+   background-color: $external-bg-color;
+   overflow: hidden;
+}
+
+.main {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   font-family: 'Kumbh Sans';
+   font-style: normal;
+}
+
+// Header Section
+
+.logo {
+   margin-top: $margin-huge;
+   font-size: 32px;
+   line-height: 40px;
+   text-align: center;
+   font-weight: $font-weight-bold;
+   color: $color-white-gray;
+}
+
+// Mode Section
+
+.mode-parent {
+   margin: 0 auto;
+   max-width: 400px;
+   margin-top: $margin-huge;
+}
+
+.mode {
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   background-color: $internal-bg-color;
+   border-radius: 31.5px;
+}
+
+.mode p {
+   line-height: $line-height-small;
+   font-size: $font-size-small;
+   font-weight: $font-weight-bold;
+   padding-left: $padding-medium;
+   padding-right: $padding-medium;
+   padding-top: $padding-small-medium;
+   padding-bottom: $padding-small;
+   border-radius: $radius-oval;
+}
+
+.mode-pomodoro {
+   margin-left: $margin-tiny;
+   color: $color-white-gray;
+   opacity: $opacity-to-color;
+}
+
+.mode-short {
+   margin-left: $margin-tiny;
+   color: $color-white-gray;
+   opacity: $opacity-to-color;
+}
+
+.mode-long {
+   color: $color-white-gray;
+   margin-left: $margin-tiny;
+   margin-right: $margin-tiny;
+   opacity: $opacity-to-color;
+}
+
+.active {
+   opacity: 1;
+   color: $external-bg-color;
+   background: $color-coral;
+}
+
+// Clock Section
+
+.clock {
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: $backdown-large;
+   height: $backdown-large;
+   padding: $padding-small;
+   margin-top: $margin-huge;
+   border-radius: $radius-circle;
+   background: linear-gradient(315deg, #2e325a 0%, #0e112a 100%);
+   box-shadow: -50px -50px 100px #272c5a, 50px 50px 100px #121530;
+}
+
+.clock-background {
+   width: $backdown-medium;
+   height: $backdown-medium;
+   border-radius: $radius-circle;
+   border: 10px solid $internal-bg-color;
+   background-color: $internal-bg-color;
+}
+
+.clock-circle {
+   stroke-width: 15px;
+   stroke: $color-coral;
+   fill: $internal-bg-color;
+   transform-origin: center;
+   transform: rotate(-90deg);
+   transition: stroke-dashoffset 0.3s;
+}
+
+.clock-time {
+   position: absolute;
+   top: 410px;
+   font-size: 100px;
+   line-height: 124px;
+   letter-spacing: -5px;
+   font-weight: $font-weight-bold;
+   color: $color-white-gray;
+   margin-top: $margin-huge;
+}
+
+.clock-start,
+.clock-pause,
+.clock-restart {
+   cursor: pointer;
+   position: absolute;
+   top: 585px;
+   margin-left: 20px;
+   font-size: 16px;
+   line-height: 20px;
+   letter-spacing: 15px;
+   color: $color-white-gray;
+   font-weight: $font-weight-bold;
+}
+
+.clock-pause,
+.clock-restart {
+   display: none;
+}
+
+// Setting Section
+
+.setting-gear {
+   margin-top: 63px;
+   text-align: center;
+   mix-blend-mode: normal;
+   opacity: $opacity-to-color;
+
+   img {
+      cursor: pointer;
+   }
+}
