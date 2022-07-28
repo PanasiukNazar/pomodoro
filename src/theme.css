@@ -1,0 +1,23 @@
+.theme-coral {
+  --color: #f87070;
+}
+
+.theme-sky {
+  --color: #70f3f8;
+}
+
+.theme-purple {
+  --color: #d881f8;
+}
+
+.font-kumbh {
+  --font-family: "Kumbh Sans";
+}
+
+.font-roboto {
+  --font-family: "Roboto Slab";
+}
+
+.font-space {
+  --font-family: "Space Mono";
+}/*# sourceMappingURL=theme.css.map */

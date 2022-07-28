@@ -1,3 +1,27 @@
+.theme-coral {
+  --color: #f87070;
+}
+
+.theme-sky {
+  --color: #70f3f8;
+}
+
+.theme-purple {
+  --color: #d881f8;
+}
+
+.font-kumbh {
+  --font-family: "Kumbh Sans";
+}
+
+.font-roboto {
+  --font-family: "Roboto Slab";
+}
+
+.font-space {
+  --font-family: "Space Mono";
+}
+
 .modal {
   display: none;
   margin: 0 auto;
@@ -16,9 +40,6 @@
   align-items: center;
   border-bottom: 1px solid #e3e1e1;
 }
-.modal-header div {
-  padding-bottom: 32px;
-}
 
 .header-logo {
   font-size: 28px;
@@ -27,6 +48,7 @@
   font-weight: 700;
   margin-left: 40px;
   margin-top: 33px;
+  padding-bottom: 32px;
 }
 
 .header-escape {
@@ -35,6 +57,7 @@
   opacity: 0.5;
   margin-right: 38px;
   margin-top: 47px;
+  padding-bottom: 32px;
 }
 
 .modal-time-type {
@@ -83,32 +106,12 @@
   margin: 0;
 }
 
-.pomodoro-button {
+.timing-button {
   position: relative;
   left: 120px;
   bottom: 38px;
 }
-.pomodoro-button img {
-  display: block;
-  cursor: pointer;
-}
-
-.short-button {
-  position: relative;
-  left: 120px;
-  bottom: 38px;
-}
-.short-button img {
-  display: block;
-  cursor: pointer;
-}
-
-.long-button {
-  position: relative;
-  left: 120px;
-  bottom: 38px;
-}
-.long-button img {
+.timing-button img {
   display: block;
   cursor: pointer;
 }
@@ -139,44 +142,42 @@
 .font-list span {
   cursor: pointer;
   margin-left: 16px;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 20px;
+  mix-blend-mode: normal;
+  border-radius: 50%;
+  padding: 15px;
 }
 
 .font-kumbh-sans {
+  font-family: "Kumbh Snash";
   font-weight: 700;
-  font-size: 15px;
-  color: #ffffff;
-  line-height: 20px;
-  background-color: #161932;
-  border-radius: 50%;
-  padding: 15px;
+  background-color: #eff1fa;
+  color: #1e213f;
+  opacity: 0.73;
 }
 
 .font-roboto-slab {
   font-family: "Roboto Slab";
-  font-style: normal;
   font-weight: 400;
-  font-size: 15px;
-  line-height: 20px;
-  color: #1e213f;
-  mix-blend-mode: normal;
   background-color: #eff1fa;
-  border-radius: 50%;
-  padding: 15px;
+  color: #1e213f;
   opacity: 0.73;
 }
 
 .font-space-mono {
   font-family: "Space Mono";
-  font-style: normal;
   font-weight: 700;
-  font-size: 15px;
-  line-height: 20px;
   background-color: #eff1fa;
-  border-radius: 50%;
-  padding: 15px;
   color: #1e213f;
-  mix-blend-mode: normal;
   opacity: 0.73;
+}
+
+.active-font {
+  opacity: 1;
+  color: #ffffff;
+  background-color: #161932;
 }
 
 .modal-color {
@@ -210,6 +211,7 @@
 
 .color-imagen-first {
   padding: 15px;
+  opacity: 0;
 }
 
 .color-sky {
@@ -232,6 +234,10 @@
   padding: 15px;
 }
 
+.active-theme {
+  opacity: 1;
+}
+
 .modal-button {
   position: relative;
   top: 24px;
@@ -252,6 +258,7 @@
   padding-right: 47px;
   padding-bottom: 12px;
   padding-top: 20px;
+  background-color: var(--color);
 }
 
 .overlay {
@@ -269,4 +276,112 @@
 
 .hide {
   display: none;
+}
+
+@media (max-width: 670px) {
+  .modal {
+    max-width: 350px;
+    top: -610px;
+  }
+  .header-logo {
+    padding-bottom: 0;
+    margin: 24px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .header-escape {
+    padding-bottom: 0;
+    margin: 24px;
+  }
+  .modal-time-type {
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 5px;
+  }
+  .modal-timing {
+    display: block;
+    margin: 0;
+    margin-top: 18px;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .modal-timing div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .modal-timing p {
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 15px;
+    white-space: nowrap;
+  }
+  .modal-timing input {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 120px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 15px;
+    color: #161932;
+  }
+  [data-mode=pomodoro] input {
+    margin-left: 82px;
+  }
+  [data-mode=shortBreak] input {
+    margin-left: 82px;
+  }
+  [data-mode=longBreak] input {
+    margin-left: 82px;
+  }
+  .timing-button {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -40px;
+    top: 5px;
+  }
+  .modal-font {
+    margin-left: 24px;
+    margin-right: 24px;
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+  }
+  .font-logo {
+    margin-left: 20px;
+    margin-bottom: 33px;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 5px;
+  }
+  .modal-color {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: 10px;
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+  }
+  .color-logo {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 15px;
+    letter-spacing: 5px;
+  }
+  .modal-button {
+    position: relative;
+    top: 24px;
+    left: 115px;
+  }
 }/*# sourceMappingURL=modal.css.map */

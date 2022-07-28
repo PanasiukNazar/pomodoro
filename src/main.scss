@@ -1,3 +1,5 @@
+@import 'theme.scss';
+
 // Variables
 //Fonts
 $font-size-small: 14px;
@@ -13,12 +15,15 @@ $internal-bg-color: #161932;
 
 //backdowns
 $margin-tiny: 7px;
+$margin-medium: 24px;
 $margin-huge: 52px;
 $padding-small: 15px;
 $padding-small-medium: 19px;
 $padding-medium: 25px;
 $radius-oval: 27px;
 $radius-circle: 50%;
+$backdown-tiny-small: 260px;
+$backdown-small: 300px;
 $backdown-small-medium: 339px;
 $backdown-medium: 410px;
 $backdown-large: 454px;
@@ -31,12 +36,13 @@ body {
    overflow: hidden;
 }
 
-.main {
+#main {
    height: 100%;
    width: 100%;
    position: absolute;
    font-family: 'Kumbh Sans';
    font-style: normal;
+   font-family: var(--font-family);
 }
 
 // Header Section
@@ -67,6 +73,10 @@ body {
 }
 
 .mode p {
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    line-height: $line-height-small;
    font-size: $font-size-small;
    font-weight: $font-weight-bold;
@@ -75,6 +85,10 @@ body {
    padding-top: $padding-small-medium;
    padding-bottom: $padding-small;
    border-radius: $radius-oval;
+}
+
+.mode p:hover {
+   opacity: 1;
 }
 
 .mode-pomodoro {
@@ -100,6 +114,7 @@ body {
    opacity: 1;
    color: $external-bg-color;
    background: $color-coral;
+   background-color: var(--color);
 }
 
 // Clock Section
@@ -133,6 +148,7 @@ body {
    transform-origin: center;
    transform: rotate(-90deg);
    transition: stroke-dashoffset 0.3s;
+   stroke: var(--color);
 }
 
 .clock-time {
@@ -146,9 +162,7 @@ body {
    margin-top: $margin-huge;
 }
 
-.clock-start,
-.clock-pause,
-.clock-restart {
+.clock-mode {
    cursor: pointer;
    position: absolute;
    top: 585px;
@@ -160,9 +174,20 @@ body {
    font-weight: $font-weight-bold;
 }
 
-.clock-pause,
-.clock-restart {
-   display: none;
+.clock-start:hover {
+   color: var(--color);
+}
+
+.clock-pause:hover {
+   color: var(--color);
+}
+
+.clock-restart:hover {
+   color: var(--color);
+}
+
+.clock-reset:hover {
+   color: var(--color);
 }
 
 // Setting Section
@@ -175,5 +200,70 @@ body {
 
    img {
       cursor: pointer;
+   }
+}
+
+//Page Adaptation
+
+@media (max-width: 670px) {
+   // Logo Section
+
+   .logo {
+      font-weight: $font-weight-bold;
+      font-size: 24px;
+      line-height: 30px;
+   }
+
+   // Mode Section
+
+   .mode {
+      margin-left: $margin-medium;
+      margin-right: $margin-medium;
+   }
+
+   .mode p {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: $padding-small-medium;
+      padding-right: $padding-small-medium;
+      padding-top: $padding-small;
+      padding-bottom: $padding-small;
+      font-weight: $font-weight-bold;
+      font-size: 12px;
+      line-height: $line-height-small;
+      white-space: nowrap;
+   }
+
+   // Clock Section
+
+   .clock {
+      width: $backdown-small;
+      height: $backdown-small;
+   }
+
+   .clock-background {
+      width: $backdown-tiny-small;
+      height: $backdown-tiny-small;
+   }
+
+   .clock-circle {
+      position: absolute;
+      stroke-width: 10px;
+      border-radius: $radius-circle;
+   }
+
+   .clock-time {
+      top: 310px;
+      font-weight: $font-weight-bold;
+      font-size: 70px;
+      line-height: 95px;
+      letter-spacing: -4px;
+   }
+   .clock-mode {
+      top: 465px;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      letter-spacing: 13;
    }
 }

@@ -1,15 +1,40 @@
+.theme-coral {
+  --color: #f87070;
+}
+
+.theme-sky {
+  --color: #70f3f8;
+}
+
+.theme-purple {
+  --color: #d881f8;
+}
+
+.font-kumbh {
+  --font-family: "Kumbh Sans";
+}
+
+.font-roboto {
+  --font-family: "Roboto Slab";
+}
+
+.font-space {
+  --font-family: "Space Mono";
+}
+
 body {
   margin: 0;
   background-color: #1e213f;
   overflow: hidden;
 }
 
-.main {
+#main {
   height: 100%;
   width: 100%;
   position: absolute;
   font-family: "Kumbh Sans";
   font-style: normal;
+  font-family: var(--font-family);
 }
 
 .logo {
@@ -36,6 +61,10 @@ body {
 }
 
 .mode p {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 17px;
   font-size: 14px;
   font-weight: 700;
@@ -44,6 +73,10 @@ body {
   padding-top: 19px;
   padding-bottom: 15px;
   border-radius: 27px;
+}
+
+.mode p:hover {
+  opacity: 1;
 }
 
 .mode-pomodoro {
@@ -69,6 +102,7 @@ body {
   opacity: 1;
   color: #1e213f;
   background: #f87070;
+  background-color: var(--color);
 }
 
 .clock {
@@ -100,6 +134,7 @@ body {
   transform-origin: center;
   transform: rotate(-90deg);
   transition: stroke-dashoffset 0.3s;
+  stroke: var(--color);
 }
 
 .clock-time {
@@ -113,9 +148,7 @@ body {
   margin-top: 52px;
 }
 
-.clock-start,
-.clock-pause,
-.clock-restart {
+.clock-mode {
   cursor: pointer;
   position: absolute;
   top: 585px;
@@ -127,9 +160,20 @@ body {
   font-weight: 700;
 }
 
-.clock-pause,
-.clock-restart {
-  display: none;
+.clock-start:hover {
+  color: var(--color);
+}
+
+.clock-pause:hover {
+  color: var(--color);
+}
+
+.clock-restart:hover {
+  color: var(--color);
+}
+
+.clock-reset:hover {
+  color: var(--color);
 }
 
 .setting-gear {
@@ -140,4 +184,55 @@ body {
 }
 .setting-gear img {
   cursor: pointer;
+}
+
+@media (max-width: 670px) {
+  .logo {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .mode {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+  .mode p {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 17px;
+    white-space: nowrap;
+  }
+  .clock {
+    width: 300px;
+    height: 300px;
+  }
+  .clock-background {
+    width: 260px;
+    height: 260px;
+  }
+  .clock-circle {
+    position: absolute;
+    stroke-width: 10px;
+    border-radius: 50%;
+  }
+  .clock-time {
+    top: 310px;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 95px;
+    letter-spacing: -4px;
+  }
+  .clock-mode {
+    top: 465px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 13;
+  }
 }/*# sourceMappingURL=main.css.map */
