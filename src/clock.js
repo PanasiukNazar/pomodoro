@@ -195,17 +195,6 @@ const state = {
       this.stopTimer();
       this.changed();
    },
-
-   // resetControls() {
-   //    if (
-   //       this.current.elapsedTime &&
-   //       this.current.elapsedTime === this.selectedModeTime
-   //    ) {
-   //       this.current.elapsedTime = 0;
-   //       this.current.timerId = null;
-   //       this.changed();
-   //    }
-   // },
 };
 
 // State onChange
@@ -328,26 +317,54 @@ function renderLogo(state) {
 }
 
 function renderTiming(state) {
-   $modalTiming.innerHTML = [
-      MODES.POMODORO,
-      MODES.SHORT_BREAK,
-      MODES.LONG_BREAK,
-   ]
-      .map(
-         (mode) => `   
-   <div data-mode="${mode}">
-      
-      <p>${MODES_NAMES[mode]}</p>
-      <input type="number" value="${state.settings.mode[mode] / 60}" disabled />
-      <div class="timing-button">
-         <img class="time-up" src="img/up.png" alt="" />
-         <img class="time-down" src="img/down.png" alt="" />
-      </div>
-      
-   </div>
-   `,
-      )
-      .join('');
+   $modalTiming.innerHTML = `
+            <div class="timing-modes">
+
+
+               <p>${MODES_NAMES[MODES.POMODORO]}</p>
+               <p>${MODES_NAMES[MODES.SHORT_BREAK]}</p>
+               <p>${MODES_NAMES[MODES.LONG_BREAK]}</p>
+
+
+            </div>
+
+            <div class="timing-inputs">
+
+                  <div data-mode="${MODES.POMODORO}">
+                  <input type="number" value="${
+                     state.settings.mode[MODES.POMODORO] / 60
+                  }" disabled />
+                  
+                  <div class="timing-button">
+                     <img class="time-up" src="img/up.png" alt="" />
+                     <img class="time-down" src="img/down.png" alt="" />
+                  </div>
+                  </div>
+
+               <div data-mode="${MODES.SHORT_BREAK}">
+                  <input type="number" value="${
+                     state.settings.mode[MODES.SHORT_BREAK] / 60
+                  }" disabled />
+                     
+                  <div class="timing-button" >
+                     <img class="time-up" src="img/up.png" alt="" />
+                     <img class="time-down" src="img/down.png" alt="" />
+                  </div> 
+               </div>    
+
+               <div data-mode="${MODES.LONG_BREAK}">
+                  <input type="number" value="${
+                     state.settings.mode[MODES.LONG_BREAK] / 60
+                  }" disabled />
+                  
+                  <div class="timing-button" >
+                     <img class="time-up" src="img/up.png" alt="" />
+                     <img class="time-down" src="img/down.png" alt="" />
+                  </div> 
+               </div>
+
+            </div>
+             `;
 }
 
 function renderModal(state) {

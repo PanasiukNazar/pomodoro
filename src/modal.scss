@@ -92,8 +92,6 @@ $letter-spacing-core: 5px;
 // Timig Section
 
 .modal-timing {
-   display: flex;
-   justify-content: space-between;
    margin-left: $margin-big;
    margin-right: $margin-medium-big;
    margin-top: $small-backdown;
@@ -127,6 +125,16 @@ $letter-spacing-core: 5px;
       -webkit-appearance: none;
       margin: 0;
    }
+}
+
+.timing-modes {
+   display: grid;
+   grid-template-columns: 185px 185px 185px;
+}
+
+.timing-inputs {
+   display: grid;
+   grid-template-columns: 185px 185px 185px;
 }
 
 .timing-button {
@@ -354,7 +362,8 @@ $letter-spacing-core: 5px;
    // Timing Section
 
    .modal-timing {
-      display: block;
+      display: flex;
+      justify-content: space-between;
       margin: 0;
       margin-top: 18px;
       margin-left: $margin-small;
@@ -362,7 +371,6 @@ $letter-spacing-core: 5px;
 
       div {
          display: flex;
-         justify-content: flex-end;
          align-items: center;
       }
 
@@ -384,22 +392,17 @@ $letter-spacing-core: 5px;
       }
    }
 
-   [data-mode='pomodoro'] {
-      input {
-         margin-left: $margin-large;
-      }
+   .timing-modes {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
    }
 
-   [data-mode='shortBreak'] {
-      input {
-         margin-left: $margin-large;
-      }
-   }
-
-   [data-mode='longBreak'] {
-      input {
-         margin-left: $margin-large;
-      }
+   .timing-inputs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
    }
 
    .timing-button {
