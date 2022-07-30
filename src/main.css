@@ -24,6 +24,7 @@
 
 body {
   margin: 0;
+  min-width: 340px;
   background-color: #1e213f;
   overflow: hidden;
 }
