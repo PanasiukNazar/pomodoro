@@ -4,9 +4,9 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "start": "cross-env NODE_ENV=development webpack serve",
-      "build-development": "cross-env NODE_ENV=development webpack",
-      "build-production": "cross-env NODE_ENV=production webpack"
+      "start": "webpack serve",
+      "build-development": "webpack",
+      "build-production": "webpack --env production"
    },
    "repository": {
       "type": "git",
@@ -21,7 +21,6 @@
    "devDependencies": {
       "clean-webpack-plugin": "^4.0.0",
       "copy-webpack-plugin": "^11.0.0",
-      "cross-env": "^7.0.3",
       "css-loader": "^6.7.1",
       "css-minimizer-webpack-plugin": "^4.0.0",
       "html-webpack-plugin": "^5.5.0",

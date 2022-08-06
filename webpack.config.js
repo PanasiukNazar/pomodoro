@@ -6,64 +6,71 @@ const CopyWrbpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerExtractPlugin = require('css-minimizer-webpack-plugin');
 const TraserWebpackPlugin = require('terser-webpack-plugin');
 
-const isDevelopment = process.env.NODE_ENV === 'development';
-const isProduction = !isDevelopment;
+module.exports = (env) => {
+   const isProduction = env.production;
+   const isDevelopment = !isProduction;
 
-const optimizeJs = isDevelopment ? 'main.js' : 'main.[contenthash].js';
-const optimizeCss = isDevelopment ? 'main.css' : 'main.[contenthash].css';
+   const optimizeJs = isDevelopment ? 'main.js' : 'main.[contenthash].js';
+   const optimizeCss = isDevelopment ? 'main.css' : 'main.[contenthash].css';
 
-module.exports = {
-   entry: './src/app/main.js',
+   return {
+      mode: isProduction ? 'production' : 'development',
 
-   output: {
-      filename: optimizeJs,
-      path: path.resolve(__dirname, 'dist'),
-   },
+      entry: './src/app/main.js',
 
-   devtool: 'source-map',
+      output: {
+         filename: optimizeJs,
+         path: path.resolve(__dirname, 'dist'),
+      },
 
-   optimization: {
-      minimizer: [new CssMinimizerExtractPlugin(), new TraserWebpackPlugin()],
-   },
+      devtool: 'source-map',
 
-   plugins: [
-      new HtmlWebpackPlugin({
-         template: './src/index.html',
-         minify: {
-            removeAttributeQuotes: isProduction,
-            collapseWhitespace: isProduction,
-            removeComments: isProduction,
-         },
-      }),
-      new CleanWebpackPlugin(),
+      optimization: {
+         minimizer: [
+            new CssMinimizerExtractPlugin(),
+            new TraserWebpackPlugin(),
+         ],
+      },
 
-      new MiniCssExtractPlugin({
-         filename: 'main.scss',
-         filename: optimizeCss,
-      }),
+      plugins: [
+         new HtmlWebpackPlugin({
+            template: './src/index.html',
+            minify: {
+               removeAttributeQuotes: isProduction,
+               collapseWhitespace: isProduction,
+               removeComments: isProduction,
+            },
+         }),
+         new CleanWebpackPlugin(),
 
-      new CopyWrbpackPlugin({
-         patterns: [
+         new MiniCssExtractPlugin({
+            filename: 'main.scss',
+            filename: optimizeCss,
+         }),
+
+         new CopyWrbpackPlugin({
+            patterns: [
+               {
+                  from: path.resolve(__dirname, './src/assets'),
+                  to: path.resolve(__dirname, 'dist'),
+                  noErrorOnMissing: true,
+               },
+            ],
+         }),
+      ],
+
+      module: {
+         rules: [
             {
-               from: path.resolve(__dirname, './src/assets'),
-               to: path.resolve(__dirname, 'dist'),
-               noErrorOnMissing: true,
+               test: /\.css$/,
+               use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+
+            {
+               test: /\.s[ca]ss$/,
+               use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
          ],
-      }),
-   ],
-
-   module: {
-      rules: [
-         {
-            test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader'],
-         },
-
-         {
-            test: /\.s[ca]ss$/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-         },
-      ],
-   },
+      },
+   };
 };
