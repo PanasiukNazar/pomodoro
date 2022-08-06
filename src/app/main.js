@@ -1,6 +1,4 @@
-import './main.css';
-import './modal.css';
-import './theme.css';
+import '../styles/main.scss';
 
 import { createState } from './state.js';
 

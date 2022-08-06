@@ -31,80 +31,37 @@ const $ovelay = document.querySelector('.overlay');
 
 const setupListeners = (state) => {
    window.addEventListener('resize', resizeClock);
+
    $applySettings.addEventListener('click', () => {
-      state.applySettings();
-      state.resetTimer();
+      confirmSettings(state);
    });
 
    $modalTiming.addEventListener('click', (event) => {
-      const isTimeUp = event.target.classList.contains('time-up');
-      const isTimeDown = event.target.classList.contains('time-down');
-
-      if (!isTimeUp && !isTimeDown) {
-         return;
-      }
-      const modeEl = event.target.closest('[data-mode]');
-      const mode = modeEl.getAttribute('data-mode');
-      if (isTimeUp) {
-         state.incrementModeTime(mode);
-      } else {
-         state.decrementModeTime(mode);
-      }
+      setTimings(state, event);
    });
 
    $parentMode.addEventListener('click', (event) => {
-      if (event.target.hasAttribute('data-mode')) {
-         state.setCurrentMode(event.target.getAttribute('data-mode'));
-         state.resetTimer();
-      }
+      setMode(state, event);
    });
 
    $settings.addEventListener('click', () => {
-      state.toggleSettingsModal();
+      showSettings(state);
    });
 
    $closeModal.addEventListener('click', () => {
-      state.toggleSettingsModal();
+      closeSettings(state);
    });
 
    $fontList.addEventListener('click', (event) => {
-      if (event.target.hasAttribute('data-font')) {
-         $mainFont.classList.remove(state.current.font);
-         if (event.target.hasAttribute('data-font')) {
-            state.setCurrentFont(event.target.getAttribute('data-font'));
-            $mainFont.classList.add(state.current.font);
-         }
-      } else {
-         return;
-      }
+      setFont(state, event);
    });
 
    $colorList.addEventListener('click', (event) => {
-      if (event.target.hasAttribute('data-theme')) {
-         $mainTheme.classList.remove(state.current.theme);
-         if (event.target.hasAttribute('data-theme')) {
-            state.setCurrentTheme(event.target.getAttribute('data-theme'));
-            $mainTheme.classList.add(state.current.theme);
-         }
-      } else {
-         return;
-      }
+      setColor(state, event);
    });
 
    $clockMode.addEventListener('click', (event) => {
-      const control = event.target.getAttribute('data-control');
-      if (control === AVAILABLE_CONTROLS.START) {
-         state.startTimer();
-      }
-      if (control === AVAILABLE_CONTROLS.PAUSE) {
-         state.stopTimer();
-      }
-      if (control === AVAILABLE_CONTROLS.RESTART) {
-         state.startTimer();
-      }
-      if (control === AVAILABLE_CONTROLS.RESET) {
-         state.resetTimer();
-      }
+      setClockMode(state, event);
    });
 };
 
@@ -117,6 +74,82 @@ const setupRenderers = (state) => {
    state.onChange(renderFonts);
    state.onChange(renderTheme);
    state.onChange(renderClockControls);
+};
+
+const confirmSettings = (state) => {
+   state.applySettings();
+   state.resetTimer();
+};
+
+const setTimings = (state, event) => {
+   const isTimeUp = event.target.classList.contains('time-up');
+   const isTimeDown = event.target.classList.contains('time-down');
+
+   if (!isTimeUp && !isTimeDown) {
+      return;
+   }
+   const modeEl = event.target.closest('[data-mode]');
+   const mode = modeEl.getAttribute('data-mode');
+   if (isTimeUp) {
+      state.incrementModeTime(mode);
+   } else {
+      state.decrementModeTime(mode);
+   }
+};
+
+const setMode = (state, event) => {
+   if (event.target.hasAttribute('data-mode')) {
+      state.setCurrentMode(event.target.getAttribute('data-mode'));
+      state.resetTimer();
+   }
+};
+
+const showSettings = (state) => {
+   state.toggleSettingsModal();
+};
+
+const closeSettings = (state) => {
+   state.toggleSettingsModal();
+};
+
+const setFont = (state, event) => {
+   if (event.target.hasAttribute('data-font')) {
+      $mainFont.classList.remove(state.current.font);
+      if (event.target.hasAttribute('data-font')) {
+         state.setCurrentFont(event.target.getAttribute('data-font'));
+         $mainFont.classList.add(state.current.font);
+      }
+   } else {
+      return;
+   }
+};
+
+const setColor = (state, event) => {
+   if (event.target.hasAttribute('data-theme')) {
+      $mainTheme.classList.remove(state.current.theme);
+      if (event.target.hasAttribute('data-theme')) {
+         state.setCurrentTheme(event.target.getAttribute('data-theme'));
+         $mainTheme.classList.add(state.current.theme);
+      }
+   } else {
+      return;
+   }
+};
+
+const setClockMode = (state, event) => {
+   const control = event.target.getAttribute('data-control');
+   if (control === AVAILABLE_CONTROLS.START) {
+      state.startTimer();
+   }
+   if (control === AVAILABLE_CONTROLS.PAUSE) {
+      state.stopTimer();
+   }
+   if (control === AVAILABLE_CONTROLS.RESTART) {
+      state.startTimer();
+   }
+   if (control === AVAILABLE_CONTROLS.RESET) {
+      state.resetTimer();
+   }
 };
 
 const resizeClock = () => {
