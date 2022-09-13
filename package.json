@@ -1,35 +1,35 @@
 {
-   "name": "pomodoro",
-   "version": "1.0.0",
-   "description": "",
-   "main": "index.js",
-   "scripts": {
-      "start": "webpack serve",
-      "build-development": "webpack",
-      "build-production": "webpack --env production"
-   },
-   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/PanasiukNazar/pomodoro.git"
-   },
-   "author": "",
-   "license": "ISC",
-   "bugs": {
-      "url": "https://github.com/PanasiukNazar/pomodoro/issues"
-   },
-   "homepage": "https://github.com/PanasiukNazar/pomodoro#readme",
-   "devDependencies": {
-      "clean-webpack-plugin": "^4.0.0",
-      "copy-webpack-plugin": "^11.0.0",
-      "css-loader": "^6.7.1",
-      "css-minimizer-webpack-plugin": "^4.0.0",
-      "html-webpack-plugin": "^5.5.0",
-      "mini-css-extract-plugin": "^2.6.1",
-      "node-sass": "^7.0.1",
-      "sass-loader": "^13.0.2",
-      "terser-webpack-plugin": "^5.3.3",
-      "webpack": "^5.74.0",
-      "webpack-cli": "^4.10.0",
-      "webpack-dev-server": "^4.9.3"
-   }
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build-development": "webpack",
+    "build-production": "webpack --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PanasiukNazar/pomodoro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PanasiukNazar/pomodoro/issues"
+  },
+  "homepage": "https://github.com/PanasiukNazar/pomodoro#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.2",
+    "terser-webpack-plugin": "^5.3.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  }
 }
